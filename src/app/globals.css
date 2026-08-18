@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 27% 97%;
+    --foreground: 224 32% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 32% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 32% 12%;
+    --primary: 243 68% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 16% 93%;
+    --secondary-foreground: 224 24% 22%;
+    --muted: 220 16% 94%;
+    --muted-foreground: 224 12% 46%;
+    --accent: 226 85% 96%;
+    --accent-foreground: 243 60% 40%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 66% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 44%;
+    --warning-foreground: 0 0% 100%;
+    --border: 220 15% 88%;
+    --input: 220 15% 86%;
+    --ring: 243 68% 55%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 226 33% 8%;
+    --foreground: 220 20% 92%;
+    --card: 226 30% 11%;
+    --card-foreground: 220 20% 92%;
+    --popover: 226 30% 11%;
+    --popover-foreground: 220 20% 92%;
+    --primary: 229 96% 66%;
+    --primary-foreground: 226 40% 10%;
+    --secondary: 226 22% 17%;
+    --secondary-foreground: 220 18% 85%;
+    --muted: 226 22% 16%;
+    --muted-foreground: 222 12% 62%;
+    --accent: 229 40% 20%;
+    --accent-foreground: 226 90% 82%;
+    --destructive: 0 66% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 55% 42%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 90% 50%;
+    --warning-foreground: 226 40% 10%;
+    --border: 226 20% 19%;
+    --input: 226 20% 22%;
+    --ring: 229 96% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-muted-foreground/25;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+}
